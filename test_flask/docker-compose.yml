@@ -1,0 +1,20 @@
+version: '2.3'
+services:
+  flask-demo:
+    image: flask-demo:latest
+    container_name: flask-demo
+    environment:
+      REDIS_HOST: redis-server
+    depends_on:
+      - redis-server
+    ports:
+      - "5000:5000"
+    networks:
+      - demo-network
+  redis-server:
+    image: redis:latest
+    container_name: redis-server
+    networks:
+      - demo-network
+networks:
+  demo-network:
