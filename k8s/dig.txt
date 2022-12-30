@@ -1,0 +1,5 @@
+#dig 
+#https://stackoom.com/question/3pEtr/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9F%A5%E8%AF%A2DNS-srv%E8%AE%B0%E5%BD%95%E8%8E%B7%E5%8F%96kubernetes-pod%E7%9A%84IP%E5%9C%B0%E5%9D%80
+
+kubectl run dig --rm -it --image=docker.io/azukiapp/dig /bin/sh
+

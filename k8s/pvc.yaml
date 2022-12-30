@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-dep2
+spec:
+  selector:
+    matchLabels:
+      app: httpd
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: httpd
+    spec:
+      containers:
+      - name: httpd
+        image: httpd:2.4.46
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: wwwroot
+          mountPath: /usr/local/apache2/htdocs
+        ports:
+        - containerPort: 80
+      volumes:
+        - name: wwwroot
+          persistentVolumeClaim:
+            claimName: my-pvc
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
