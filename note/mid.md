@@ -12,4 +12,4 @@
 
 3. 使用gitlab + runner,讓flask+redis (點擊網頁,次數會加一),部屬到新的虛擬機上
 * 做不出來...
-![PICTUER](https://github.com/victor0520/docker1/blob/main/bitmap/mid3.png)
+![PICTUER](https://github.com/victor0520/docker1/blob/main/bitmap/mid3-1.png)
